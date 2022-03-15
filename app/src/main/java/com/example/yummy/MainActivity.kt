@@ -11,6 +11,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.Font
@@ -24,50 +25,25 @@ import com.example.yummy.ui.theme.YummyTheme
 import com.example.yummy.ui.theme.primary
 import com.example.yummy.ui.theme.secondary
 import com.example.yummy.ui.theme.white
+import com.example.yummy.util.Navigation
+import com.example.yummy.util.ShowBar
+import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContent {
+            ShowBar(true)
             YummyTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = secondary
                 ) {
-                    SplashScreen()
+                    Navigation()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun SplashScreen() {
-    val multicore_font = FontFamily(
-        Font(R.font.multicore_pro, FontWeight.Normal)
-    )
-    val noto_sans_font = FontFamily(
-        Font(R.font.noto_sans_kr_medium)
-    )
-
-    Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(
-            "Yummy",
-            fontFamily = multicore_font,
-            fontSize = 30.sp,
-            color = primary,
-        )
-        Text(
-            "대한민국 1등 음식점 추천 어플",
-            fontFamily = noto_sans_font,
-            fontSize = 14.sp,
-            color = white
-        )
     }
 }
 
