@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.yummy.MainActivity
 import com.example.yummy.view.splash.SplashScreen
 
 @Composable
@@ -19,9 +20,7 @@ fun Navigation() {
             SplashScreen(navController = navController)
         }
         composable("main_screen") {
-            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                Text(text = "Main Screen")
-            }
+            MainActivity()
         }
     }
 }
