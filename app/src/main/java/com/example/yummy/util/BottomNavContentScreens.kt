@@ -23,14 +23,11 @@ class BottomNavContentScreens {
                 .background(secondary)
                 .wrapContentSize(Alignment.Center)
         ) {
-            Text(
-                text = "Home Screen",
-                fontWeight = FontWeight.Bold,
-                color = Color.White,
-                modifier = Modifier.align(Alignment.CenterHorizontally),
-                textAlign = TextAlign.Center,
-                fontSize = 20.sp
-            )
+            GoogleMap(
+                modifier = Modifier
+            ){
+
+            }
         }
     }
 
