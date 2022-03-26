@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.yummy.MainActivity
+import com.example.yummy.MainScreenView
 import com.example.yummy.view.splash.SplashScreen
 
 @Composable
@@ -15,7 +16,7 @@ fun Navigation() {
             SplashScreen(navController = navController)
         }
         composable("main_screen") {
-            MainActivity()
+            MainScreenView()
         }
     }
 }
